@@ -1,12 +1,14 @@
 <div class="category-nav {{ request()->routeIs('home') ? 'show' : '' }}">
-    <div class="category-nav-inner">
+    <div class="category-nav-inner"
+         data-toggle="collapse" href="#categoriesHolder" role="button"
+    >
         {{ trans('storefront::layout.all_categories_header') }}
         <i class="las la-bars"></i>
     </div>
 
     @if ($categoryMenu->menus()->isNotEmpty())
         <div class="category-dropdown-wrap">
-            <div class="category-dropdown">
+            <div class="category-dropdown collapse multi-collapse" id="categoriesHolder">
                 <ul class="list-inline mega-menu vertical-megamenu">
                     @foreach ($categoryMenu->menus() as $menu)
                         @include('public.layout.navigation.menu', ['type' => 'category_menu'])
