@@ -76,6 +76,11 @@ class Order extends Model
         return $this->taxes->isNotEmpty();
     }
 
+    public function courier()
+    {
+        return $this->belongsTo(Courier::class);
+    }
+
     public function salesAnalytics()
     {
         return $this->normalizeOrders(

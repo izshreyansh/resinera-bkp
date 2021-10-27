@@ -62,6 +62,7 @@ final class Versions
   'fideloper/proxy' => '4.4.1@c073b2bd04d1c90e04dc1b787662b558dd65ade0',
   'florianv/exchanger' => '2.6.0@6c2347ddcecbd53fb401787eda8be8f1f8a4c646',
   'florianv/swap' => '4.3.0@88edd27fcb95bdc58bbbf9e4b00539a2843d97fd',
+  'garygreen/pretty-routes' => '1.0.10@ebd9e2328bc213f3c413d4ec7e3aef53801d1646',
   'graham-campbell/result-type' => 'v1.0.1@7e279d2cd5d7fbb156ce46daada972355cea27bb',
   'guzzlehttp/guzzle' => '7.2.0@0aa74dfb41ae110835923ef10a9d803a22d50e79',
   'guzzlehttp/promises' => '1.4.0@60d379c243457e073cff02bc323a2a86cb355631',
@@ -93,6 +94,7 @@ final class Versions
   'mehedi/laravel-captcha' => 'v3.2.0@3c67ac7b6b0aa1f9083606d83400051ef719d569',
   'mehedi/stylist' => 'dev-master@2cbaace35fc8f600b2455aed6d7f6e226f712709',
   'mexitek/phpcolors' => 'v0.4@89bf30473a68dc8845e46e9db3e536b969e18c11',
+  'milon/barcode' => '8.0.1@a1b1ee1a743c1368597f1742e6ee4765333a15a1',
   'monolog/monolog' => '2.2.0@1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
   'mtdowling/jmespath.php' => '2.6.0@42dae2cbd13154083ca6d70099692fef8ca84bfb',
   'myclabs/php-enum' => '1.7.7@d178027d1e679832db9f38248fcc7200647dc2b7',
@@ -189,7 +191,7 @@ final class Versions
   'maximebf/debugbar' => 'v1.16.4@c86c717e4bf3c6d98422da5c38bfa7b0f494b04c',
   'nunomaduro/collision' => 'v5.1.0@7c2b95589bf81e274e61e47f7672a1b2c3e06eaa',
   'symfony/debug' => 'v4.4.18@5dfc7825f3bfe9bb74b23d8b8ce0e0894e32b544',
-  'envaysoft/fleetcart' => '1.0.0+no-version-set@',
+  'envaysoft/fleetcart' => '1.0.x-dev@cb0871b6f5cb0e35f6ab72fc9251194530e1c295',
 );
 
     private function __construct()

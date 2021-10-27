@@ -9,7 +9,14 @@
 		<div class="row">
 			<div class="col-8 border border-dark">
 				<div class="text-center col-12">
-					<img src="http://www.api2pdf.com/wp-content/uploads/2018/07/download-1.png" />
+                    @if($order->tracking_id)
+                    <br />
+                    <div style="width: 25%; margin-left:auto; margin-right:auto; margin-top:20px;">
+                        {!! DNS1D::getBarcodeHTML($order->tracking_id, 'C128') !!}
+                        {{ $order->tracking_id }}
+                    </div>
+                    <br />
+                    @endif
 					<h4>Order Information</h4>
 				</div>
 				<hr/>

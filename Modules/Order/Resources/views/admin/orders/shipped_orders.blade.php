@@ -25,6 +25,7 @@
 			<th>{{ trans('admin::admin.table.id') }}</th>
 			<th>{{ trans('order::orders.table.customer_name') }}</th>
 			<th>{{ trans('order::orders.table.customer_email') }}</th>
+            <th>Shipment Details</th>
 			<th>{{ trans('admin::admin.table.status') }}</th>
 			<th>{{ trans('order::orders.table.total') }}</th>
 			<th data-sort>{{ trans('admin::admin.table.created') }}</th>
@@ -45,15 +46,12 @@
 					$(this).prop('checked',true);
 				});
 			}else{
-
 				$('.select-row').each(function() {
 					$(this).prop('checked',false);
 				});
 			}
 		});
-
 	});
-
 
 	function moveToDelivered(){
 		var checkedOrder = $('.select-row:checked').length;
@@ -75,14 +73,11 @@
 			$("#selected_orders").val(selectedOrders);
 			$("#hidden_mark_delivered_form").submit();
 		}
-		
 	}
-
 
 	DataTable.setRoutes('#shipped-orders-table .table', {
 		index: '{{ "admin.orders.shipped" }}',
 	});
-
 
 	new DataTable('#shipped-orders-table .table', {
 		columns: [
@@ -90,12 +85,13 @@
 		{ data: 'id', width: '5%',orderable: true, searchable: true },
 		{ data: 'customer_name', orderable: false, searchable: true },
 		{ data: 'customer_email' },
+		{ data: 'shipment' },
 		{ data: 'status' },
 		{ data: 'total' },
 		{ data: 'created', name: 'created_at' },
 		],
 	});
 
-	
+
 </script>
 @endpush

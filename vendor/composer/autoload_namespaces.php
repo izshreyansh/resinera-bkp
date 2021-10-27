@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Sabberworm\\CSS' => array($vendorDir . '/sabberworm/php-css-parser/lib'),
     'Requests' => array($vendorDir . '/rmccue/requests/library'),
+    'Milon\\Barcode' => array($vendorDir . '/milon/barcode/src'),
     'Mcamara\\LaravelLocalization' => array($vendorDir . '/mcamara/laravel-localization/src'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
     'AlternativeLaravelCache' => array($vendorDir . '/swayok/alternative-laravel-cache/src'),

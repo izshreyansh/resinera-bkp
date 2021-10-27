@@ -31,7 +31,7 @@ class OrderController
 
 	public function show($id = 0)
 	{
-		$entity = Order::find($id);       
+		$entity = Order::find($id);
 
 		return view("{$this->viewPath}.show")->with($this->getResourceName(), $entity);
 	}
@@ -77,7 +77,7 @@ class OrderController
                 $order = Order::where('status',Order::PROCESSING)->where('pick_list_id',$pickListId);
                 $order = $order->get();
             }
-    		
+
     		$order = new OrderTable($order);
     		return $order;
     	}
@@ -86,7 +86,7 @@ class OrderController
         $pickListIds = OrderPickList::selectRaw('DISTINCT(pick_list_id) As list_id')->get()->pluck('list_id')->toArray();
         $couriers = Courier::orderBy('name','DESC')->get();
 
-        
+
     	return view("{$this->viewPath}.processing_orders",['pickListIds'=>$pickListIds,'couriers'=>$couriers]);
     }
 
@@ -144,7 +144,7 @@ class OrderController
             }else{
                 $trackingId = $request->get('tracking_id');
             }
-            
+
             if($trackingId != '0'){
                 $order = Order::find($request->get('order_id'));
                 $order->courier_id = $request->get('courier_id');
@@ -165,7 +165,7 @@ class OrderController
                     'message'=>'Sorry, we have facing some issue in connecting with courier service. Please try again later'
                 ];
             }
-            
+
 
         }else{
             $response = [
@@ -178,10 +178,10 @@ class OrderController
     }
 
     /** get delivery slip **/
-    public function getDeliverySlip($id){
-
-        $orderProducts = OrderProduct::where('order_id',$id)->get();
+    public function getDeliverySlip($id)
+    {
         $order = Order::find($id);
+        $orderProducts = OrderProduct::where('order_id',$id)->get();
 
         return view("{$this->viewPath}.delivery_slip",['order'=>$order,'orderProducts'=>$orderProducts]);
     }
@@ -217,7 +217,7 @@ class OrderController
                     "phone"=>$orderDetail->customer_phone,
                     "cod_amount"=>$amountArray['amount'],
                     "weight"=>$orderDetail->totalweight,
-                    "country"=>$orderDetail->shipping_country,     
+                    "country"=>$orderDetail->shipping_country,
                     "state"=>$orderDetail->shipping_state,
                     "city"=>$orderDetail->shipping_city,
                     "client"=>"KOTHARISURFACE-B2C",
@@ -230,7 +230,7 @@ class OrderController
                     "return_country"=>"India",
                 ]
             ];
-            
+
             $url='https://staging-express.delhivery.com/api/cmu/create.json';
             $headers = array(
                 "Accept: application/json",
@@ -251,7 +251,7 @@ class OrderController
             curl_close($ch);
 
             $result = json_decode($response);
-            
+
             if($result->success){
 
                 return $result->upload_wbn;
