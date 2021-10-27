@@ -83,7 +83,9 @@ return [
 
     'flat_rate_enabled' => 'Status',
     'translatable.flat_rate_label' => 'Label',
-    'flat_rate_cost' => 'Cost',
+    'flat_rate_below_500_cost' => 'Cost For Less than 500 grams',
+    'flat_rate_below_2000_cost' => 'Cost For 500-2000 grams',
+    'flat_rate_above_2000_cost' => 'Cost For above 2000 grams',
 
     'paypal_enabled' => 'Status',
     'translatable.paypal_label' => 'Label',

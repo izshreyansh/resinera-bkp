@@ -256,7 +256,9 @@ class SettingTabs extends Tabs
             $tab->fields([
                 'flat_rate_enabled',
                 'translatable.flat_rate_label',
-                'flat_rate_cost',
+                'flat_rate_below_500_cost',
+                'flat_rate_below_2000_cost',
+                'flat_rate_above_2000_cost',
             ]);
 
             $tab->view('setting::admin.settings.tabs.flat_rate');
