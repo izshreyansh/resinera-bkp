@@ -88,15 +88,19 @@
             --color-primary-transparent-lite: {{ color2rgba($themeColor, 0.3) }};"
     >
         <div class="wrapper" id="app">
-            @include('public.layout.top_nav')
-            @include('public.layout.header')
-            @include('public.layout.navigation')
+            @if(! in_array(Route::currentRouteName(), ['cart.index', 'checkout.create', 'checkout.complete.show']))
+                @include('public.layout.top_nav')
+                @include('public.layout.header')
+                @include('public.layout.navigation')
+            @endif
             @include('public.layout.breadcrumb')
 
             @yield('content')
 
             @include('public.home.sections.subscribe')
-            @include('public.layout.footer')
+            @if(! in_array(Route::currentRouteName(), ['cart.index', 'checkout.create', 'checkout.complete.show']))
+                @include('public.layout.footer')
+            @endif
 
             <div class="overlay"></div>
 
