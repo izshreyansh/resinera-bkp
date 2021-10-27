@@ -17,6 +17,9 @@ class OrderTable extends AdminTable
             ->addColumn('customer_name', function ($order) {
                 return $order->customer_full_name;
             })
+            ->editColumn('id', function ($order) {
+                return link_to_route('admin.orders.show',$order->id, [$order->id]);
+            })
             ->editColumn('shipment', function ($order) {
                 if ($order->courier()->exists()) {
                     return $order->courier->name . "({$order->tracking_id})";
