@@ -105,6 +105,10 @@
 		});
 	}
 
+	function viewOrder(id) {
+	    window.location = "{!! route('admin.orders.show') !!}/"+id;
+    }
+
 	/** change id **/
 	function changeTrackingId(){
 
@@ -208,10 +212,11 @@
 				searchable: false,
 				orderable: false,
 				render: function (data, type, full, meta) {
-					var id = data.id;
-					var viewUrl = "{{ route('admin.orders.show') }}/"+id;
-					var func = "shippedOrder("+id+")";
-					var buttons = '<a class="btn btn-default" title="Shipped" href="javascript:'+func+'"><i class="fa fa-truck" aria-hidden="true"></i></a>';
+					let id = data.id;
+					let func = "shippedOrder("+id+")";
+					let viewFunc = "viewOrder("+id+")";
+					let buttons = '<a class="btn btn-default" title="Shipped" href="javascript:'+func+'"><i class="fa fa-truck" aria-hidden="true"></i></a>';
+					buttons += '<a class="btn btn-default" title="View Order" href="javascript:'+viewFunc+'"><i class="fa fa-eye" aria-hidden="true"></i></a>';
 					return buttons;
 				},
 			}
