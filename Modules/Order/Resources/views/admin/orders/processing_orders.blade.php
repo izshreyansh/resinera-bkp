@@ -41,7 +41,7 @@
 	</div>
 </div>
 <form id="hidden_slip" action="" method="GET" target="_blank" class="hide">
-	
+
 </form>
 <div class="modal fade" id="change-order-status">
 	<div class="modal-dialog modal-md">
@@ -54,7 +54,7 @@
 				<form class="form-horizontal" id="change-order-form">
 					<div class="modal-body">
 						<div class="box-body cust-box cust-box-modal">
-							<input type="hidden" name="order_id" id="order_id" value="">							
+							<input type="hidden" name="order_id" id="order_id" value="">
 							<div class="form-group">
 								<label for="" class="control-label">Select Courier <span class="text-danger">*</span></label>
 								<div class="width-100">
@@ -68,14 +68,14 @@
 								</div>
 							</div>
 							<div class="form-group" id="tracking_div" style="display: none;">
-								<label for="" class="control-label">Tracking ID <span class="text-danger">*</span></label>
+								<label for="" class="control-label">Tracking ID</label>
 								<div class="width-100">
 									<input type="text" name="tracking_id" id="tracking_id" class="form-control" placeholder="Enter Tracking ID">
 									<span class="text-danger" id="tracking_id_error"></span>
 								</div>
 							</div>
 						</div>
-					</div>                              
+					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn bg-navy" onclick="updateOrder()">Save</button>
 						<button type="button" class="btn bg-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
@@ -111,7 +111,7 @@
 		var courierData = $("#courier_id").val();
 		courierData = courierData.split('-');
 		$("#tracking_div").css('display','none');
-		
+
 		if(courierData[1] != 'delhivery' && courierData[0] != ''){
 			$("#tracking_div").css('display','block');
 		}
@@ -133,10 +133,10 @@
 			error++;
 		}
 
-		if(trackingId == '' && ($("#tracking_div").css('display') == 'block')){
+		/*if(trackingId == '' && ($("#tracking_div").css('display') == 'block')){
 			$("#tracking_id_error").html('Enter tracking ID');
 			error++;
-		}
+		}*/
 
 		if(error > 0){
 			return false;
@@ -155,7 +155,7 @@
 			success:function(result){
 
 				var response = JSON.parse(result);
-				
+
 				if(response.status == 1){
 					success(response.message);
 					$("#change-order-status").modal('hide');
@@ -182,7 +182,7 @@
 			"responsive": true,
 			"pageLength": 20,
 			"processing": true,
-			"serverSide": true,			
+			"serverSide": true,
 			"lengthMenu": [
 			[10, 20, 50, 100, 200],
 			[10, 20, 50, 100, 200],

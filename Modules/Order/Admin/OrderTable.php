@@ -18,7 +18,9 @@ class OrderTable extends AdminTable
                 return $order->customer_full_name;
             })
             ->editColumn('shipment', function ($order) {
-                return $order->courier->name . "({$order->tracking_id})";
+                if ($order->courier()->exists()) {
+                    return $order->courier->name . "({$order->tracking_id})";
+                }
             })
             ->editColumn('total', function ($order) {
                 return $order->total->format();
