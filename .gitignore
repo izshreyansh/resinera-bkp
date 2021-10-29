@@ -2,7 +2,6 @@
 .phpintel/
 *.sublime-project
 .DS_Store
-/public/storage/
 /public/modules/
 /public/themes/
 /Modules/*/Assets/
