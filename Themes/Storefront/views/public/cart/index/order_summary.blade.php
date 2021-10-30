@@ -60,7 +60,7 @@
                             @change="updateShippingMethod(shippingMethod)"
                         >
 
-                        <label :for="shippingMethod.name" v-text="shippingMethod.label + ' ' + shippingMethod.cost.inCurrentCurrency.formatted +' x ' + {{Cart::totalWeight()}} + 'g'"></label>
+                        <label :for="shippingMethod.name" v-text="shippingMethod.label + ' (' + {{Cart::totalWeight()}} + 'g)'"></label>
 
                         <span
                             class="price-amount"

@@ -63,8 +63,8 @@
 
                 <div class="form-group">
                     <div class="form-radio" v-for="shippingMethod in cart_after_order_success.availableShippingMethods">
-                        <label :for="shippingMethod.name" v-text="shippingMethod.label + ' ' + shippingMethod.cost.inCurrentCurrency.formatted +' x ' + {{session()->get('totalWeight')}} + 'g'"></label>
-                        
+                        <label :for="shippingMethod.name" v-text="shippingMethod.label + ' (' +  {{session()->get('totalWeight')}} + 'g)'"></label>
+
                         <span
                             class="price-amount"
                             v-html="'{{session()->get('totalShippingCharge')->toArray()['formatted']}}'"
