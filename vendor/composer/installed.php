@@ -7,7 +7,7 @@
         'aliases' => array(
             0 => '1.0.x-dev',
         ),
-        'reference' => 'cb0871b6f5cb0e35f6ab72fc9251194530e1c295',
+        'reference' => '99e14cb72de9037fa6c36de2c8276091fb8f7ffa',
         'name' => 'envaysoft/fleetcart',
         'dev' => true,
     ),
@@ -272,7 +272,7 @@
             'aliases' => array(
                 0 => '1.0.x-dev',
             ),
-            'reference' => 'cb0871b6f5cb0e35f6ab72fc9251194530e1c295',
+            'reference' => '99e14cb72de9037fa6c36de2c8276091fb8f7ffa',
             'dev_requirement' => false,
         ),
         'ezyang/htmlpurifier' => array(

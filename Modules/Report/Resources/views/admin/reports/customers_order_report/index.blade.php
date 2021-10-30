@@ -27,9 +27,9 @@
             <thead>
                 <tr>
                     <th>{{ trans('report::admin.table.date') }}</th>
-                    <th>{{ trans('report::admin.table.customer_name') }}</th>
+                    <th>Customer Name</th>
                     <th>{{ trans('report::admin.table.customer_email') }}</th>
-                    <th>{{ trans('report::admin.table.customer_group') }}</th>
+                    <th>Type</th>
                     <th>{{ trans('report::admin.table.orders') }}</th>
                     <th>{{ trans('report::admin.table.products') }}</th>
                     <th>{{ trans('report::admin.table.total') }}</th>
@@ -40,7 +40,11 @@
                 @forelse ($report as $data)
                     <tr>
                         <td>{{ $data->start_date->toFormattedDateString() }} - {{ $data->end_date->toFormattedDateString() }}</td>
-                        <td>{{ $data->customer_full_name }}</td>
+                        <td>
+                            {{ $data->customer_full_name }}
+                            <br />
+                            <small>({{ $data->customer_phone }})</small>
+                        </td>
                         <td>{{ $data->customer_email }}</td>
                         <td>{{ is_null($data->customer_id) ? trans('report::admin.table.guest') : trans('report::admin.table.registered') }}</td>
                         <td>{{ $data->total_orders }}</td>

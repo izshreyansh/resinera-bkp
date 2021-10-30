@@ -13,7 +13,7 @@ class CustomersOrderReport extends Report
 
     protected function query()
     {
-        return Order::select('customer_id', 'customer_first_name', 'customer_last_name', 'customer_email')
+        return Order::select('customer_id', 'customer_first_name', 'customer_last_name', 'customer_email', 'customer_phone')
             ->selectRaw('MIN(orders.created_at) as start_date')
             ->selectRaw('MAX(orders.created_at) as end_date')
             ->selectRaw('COUNT(*) as total_orders')
@@ -28,11 +28,7 @@ class CustomersOrderReport extends Report
                 $query->where('customer_email', request('customer_email'));
             })
             ->groupBy([
-                'orders.id',
-                'customer_id',
-                'customer_first_name',
-                'customer_last_name',
-                'customer_email',
+                'customer_id'
             ]);
     }
 }
