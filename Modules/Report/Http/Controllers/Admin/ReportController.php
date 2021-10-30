@@ -16,6 +16,7 @@ use Modules\Report\TaggedProductsReport;
 use Modules\Report\BrandedProductsReport;
 use Modules\Report\ProductsPurchaseReport;
 use Modules\Report\CategorizedProductsReport;
+use FleetCart\Exports\CustomersOrderReport as CustomersOrderReportExport;
 
 class ReportController
 {
@@ -55,6 +56,19 @@ class ReportController
         }
 
         return $this->report($type)->render($request);
+    }
+
+    /**
+     * Download a listing of the resource.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function download(Request $request)
+    {
+        //$type = $request->query('type');
+
+        return (new CustomersOrderReportExport)->download('cu_orders.csv');
     }
 
     /**

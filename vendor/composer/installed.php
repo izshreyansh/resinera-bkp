@@ -7,7 +7,7 @@
         'aliases' => array(
             0 => '1.0.x-dev',
         ),
-        'reference' => '99e14cb72de9037fa6c36de2c8276091fb8f7ffa',
+        'reference' => '645f2eb1eccfa92f1b36ec075f140a1db77090cd',
         'name' => 'envaysoft/fleetcart',
         'dev' => true,
     ),
@@ -272,7 +272,7 @@
             'aliases' => array(
                 0 => '1.0.x-dev',
             ),
-            'reference' => '99e14cb72de9037fa6c36de2c8276091fb8f7ffa',
+            'reference' => '645f2eb1eccfa92f1b36ec075f140a1db77090cd',
             'dev_requirement' => false,
         ),
         'ezyang/htmlpurifier' => array(
@@ -750,12 +750,12 @@
             'dev_requirement' => false,
         ),
         'maatwebsite/excel' => array(
-            'pretty_version' => '3.1.26',
-            'version' => '3.1.26.0',
+            'pretty_version' => '3.1.30',
+            'version' => '3.1.30.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../maatwebsite/excel',
             'aliases' => array(),
-            'reference' => '66f7c9584304ad0b6a267a5d8ffbfa2ff4272e85',
+            'reference' => 'aa5d2e4d25c5c8218ea0a15103da95f5f8728953',
             'dev_requirement' => false,
         ),
         'maatwebsite/laravel-sidebar' => array(

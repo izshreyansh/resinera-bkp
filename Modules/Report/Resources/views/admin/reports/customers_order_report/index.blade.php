@@ -15,6 +15,10 @@
         <label for="customer-email">{{ trans('report::admin.filters.customer_email') }}</label>
         <input type="text" name="customer_email" class="form-control" id="customer-email" value="{{ $request->customer_email }}">
     </div>
+
+    <a href="{{ route('admin.reports.download') }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')

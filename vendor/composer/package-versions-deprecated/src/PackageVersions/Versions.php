@@ -85,7 +85,7 @@ final class Versions
   'league/flysystem-cached-adapter' => '1.1.0@d1925efb2207ac4be3ad0c40b8277175f99ffaff',
   'league/mime-type-detection' => '1.5.1@353f66d7555d8a90781f6f5e7091932f9a4250aa',
   'league/oauth1-client' => 'v1.8.2@159c3d2bf27568f9af87d6c3f4bb616a251eb12b',
-  'maatwebsite/excel' => '3.1.26@66f7c9584304ad0b6a267a5d8ffbfa2ff4272e85',
+  'maatwebsite/excel' => '3.1.30@aa5d2e4d25c5c8218ea0a15103da95f5f8728953',
   'maatwebsite/laravel-sidebar' => '2.4.0@8da48f5f256eeae7f880ed350e48801b52005e11',
   'maennchen/zipstream-php' => '2.1.0@c4c5803cc1f93df3d2448478ef79394a5981cc58',
   'markbaker/complex' => '2.0.0@9999f1432fae467bc93c53f357105b4c31bb994c',
@@ -191,7 +191,7 @@ final class Versions
   'maximebf/debugbar' => 'v1.16.4@c86c717e4bf3c6d98422da5c38bfa7b0f494b04c',
   'nunomaduro/collision' => 'v5.1.0@7c2b95589bf81e274e61e47f7672a1b2c3e06eaa',
   'symfony/debug' => 'v4.4.18@5dfc7825f3bfe9bb74b23d8b8ce0e0894e32b544',
-  'envaysoft/fleetcart' => '1.0.x-dev@99e14cb72de9037fa6c36de2c8276091fb8f7ffa',
+  'envaysoft/fleetcart' => '1.0.x-dev@645f2eb1eccfa92f1b36ec075f140a1db77090cd',
 );
 
     private function __construct()
