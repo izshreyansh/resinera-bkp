@@ -2,8 +2,6 @@
 .phpintel/
 *.sublime-project
 .DS_Store
-/public/modules/
-/public/themes/
 /Modules/*/Assets/
 /Themes/*/assets/
 /tags
