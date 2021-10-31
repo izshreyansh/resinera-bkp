@@ -10,6 +10,10 @@
         <label for="tax-name">{{ trans('report::admin.filters.tax_name') }}</label>
         <input type="text" name="tax_name" class="form-control" id="tax-name" value="{{ $request->tax_name }}">
     </div>
+
+    <a href="{{ route('admin.reports.download', ['type' => 'tax_report']) }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')

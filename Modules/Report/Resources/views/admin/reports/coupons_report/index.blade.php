@@ -10,6 +10,10 @@
         <label for="coupon-code">{{ trans('report::admin.filters.coupon_code') }}</label>
         <input type="text" name="coupon_code" class="form-control" id="coupon-code" value="{{ $request->coupon_code }}">
     </div>
+
+    <a href="{{ route('admin.reports.download', ['type' => 'coupons_report']) }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')

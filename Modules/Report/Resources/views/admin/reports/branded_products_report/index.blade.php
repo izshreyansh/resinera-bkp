@@ -6,6 +6,10 @@
 
         <input type="text" name="brand" class="form-control" id="brand" value="{{ $request->brand }}">
     </div>
+
+    <a href="{{ route('admin.reports.download', ['type' => 'branded_products_report']) }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')

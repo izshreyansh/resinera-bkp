@@ -71,8 +71,8 @@ class Product extends Model
      */
     protected $casts = [
         'manage_stock' => 'boolean',
-        'in_stock' => 'boolean',
-        'is_active' => 'boolean',
+        'in_stock'     => 'boolean',
+        'is_active'    => 'boolean',
     ];
 
     /**
@@ -96,8 +96,14 @@ class Product extends Model
      * @var array
      */
     protected $appends = [
-        'base_image', 'formatted_price', 'rating_percent', 'is_in_stock',
-        'is_out_of_stock', 'is_new', 'has_percentage_special_price', 'special_price_percent',
+        'base_image',
+        'formatted_price',
+        'rating_percent',
+        'is_in_stock',
+        'is_out_of_stock',
+        'is_new',
+        'has_percentage_special_price',
+        'special_price_percent',
     ];
 
     /**
@@ -105,7 +111,11 @@ class Product extends Model
      *
      * @var array
      */
-    protected $translatedAttributes = ['name', 'description', 'short_description'];
+    protected $translatedAttributes = [
+        'name',
+        'description',
+        'short_description'
+    ];
 
     /**
      * The attribute that will be slugged.
@@ -122,7 +132,7 @@ class Product extends Model
     protected static function booted()
     {
         static::saved(function ($product) {
-            if (! empty(request()->all())) {
+            if (!empty(request()->all())) {
                 $product->saveRelations(request()->all());
             }
 
@@ -147,7 +157,7 @@ class Product extends Model
         return static::select('id')
             ->withName()
             ->whereIn('id', $ids)
-            ->when(! empty($ids), function ($query) use ($ids) {
+            ->when(!empty($ids), function ($query) use ($ids) {
                 $idsString = collect($ids)->filter()->implode(',');
 
                 $query->orderByRaw("FIELD(id, {$idsString})");
@@ -195,9 +205,11 @@ class Product extends Model
 
     public function scopeWithBaseImage($query)
     {
-        $query->with(['files' => function ($q) {
-            $q->wherePivot('zone', 'base_image');
-        }]);
+        $query->with([
+            'files' => function ($q) {
+                $q->wherePivot('zone', 'base_image');
+            }
+        ]);
     }
 
     public function brand()
@@ -264,7 +276,7 @@ class Product extends Model
 
     public function getSpecialPriceAttribute($specialPrice)
     {
-        if (! is_null($specialPrice)) {
+        if (!is_null($specialPrice)) {
             return Money::inDefaultCurrency($specialPrice);
         }
     }
@@ -380,7 +392,7 @@ class Product extends Model
 
     public function isOutOfStock()
     {
-        return ! $this->isInStock();
+        return !$this->isInStock();
     }
 
     public function outOfStock()
@@ -409,16 +421,21 @@ class Product extends Model
 
     public function getSpecialPrice()
     {
-        $specialPrice = $this->attributes['special_price'];
-
-        if ($this->special_price_type === 'percent') {
-            $discountedPrice = ($specialPrice / 100) * $this->attributes['price'];
-
-            $specialPrice = $this->attributes['price'] - $discountedPrice;
-        }
-
-        if ($specialPrice < 0) {
+        if (!isset($this->attributes['special_price'])) {
             $specialPrice = 0;
+        } else {
+
+            $specialPrice = $this->attributes['special_price'];
+
+            if ($this->special_price_type === 'percent') {
+                $discountedPrice = ($specialPrice / 100) * $this->attributes['price'];
+
+                $specialPrice = $this->attributes['price'] - $discountedPrice;
+            }
+
+            if ($specialPrice < 0) {
+                $specialPrice = 0;
+            }
         }
 
         return Money::inDefaultCurrency($specialPrice);
@@ -459,12 +476,12 @@ class Product extends Model
 
     private function hasSpecialPriceStartDate()
     {
-        return ! is_null($this->special_price_start);
+        return !is_null($this->special_price_start);
     }
 
     private function hasSpecialPriceEndDate()
     {
-        return ! is_null($this->special_price_end);
+        return !is_null($this->special_price_end);
     }
 
     private function specialPriceStartDateIsValid()
@@ -501,12 +518,12 @@ class Product extends Model
 
     private function hasNewFromDate()
     {
-        return ! is_null($this->new_from);
+        return !is_null($this->new_from);
     }
 
     private function hasNewToDate()
     {
-        return ! is_null($this->new_to);
+        return !is_null($this->new_to);
     }
 
     private function newFromDateIsValid()
@@ -543,11 +560,16 @@ class Product extends Model
     public static function findBySlug($slug)
     {
         return self::with([
-            'categories', 'tags', 'attributes.attribute.attributeSet',
-            'options', 'files', 'relatedProducts', 'upSellProducts',
+            'categories',
+            'tags',
+            'attributes.attribute.attributeSet',
+            'options',
+            'files',
+            'relatedProducts',
+            'upSellProducts',
         ])
-        ->where('slug', $slug)
-        ->firstOrFail();
+            ->where('slug', $slug)
+            ->firstOrFail();
     }
 
     public function clean()
@@ -574,6 +596,7 @@ class Product extends Model
      * Get table data for the resource
      *
      * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function table($request)
@@ -583,7 +606,11 @@ class Product extends Model
             ->withName()
             ->withBaseImage()
             ->withPrice()
-            ->addSelect(['id', 'is_active', 'created_at'])
+            ->addSelect([
+                'id',
+                'is_active',
+                'created_at'
+            ])
             ->when($request->has('except'), function ($query) use ($request) {
                 $query->whereNotIn('id', explode(',', $request->except));
             });
@@ -595,6 +622,7 @@ class Product extends Model
      * Save associated relations for the product.
      *
      * @param array $attributes
+     *
      * @return void
      */
     public function saveRelations($attributes = [])
@@ -620,9 +648,16 @@ class Product extends Model
 
         $translations = $this->translations()
             ->withoutGlobalScope('locale')
-            ->get(['name', 'description', 'short_description']);
+            ->get([
+                'name',
+                'description',
+                'short_description'
+            ]);
 
-        return ['id' => $this->id, 'translations' => $translations];
+        return [
+            'id' => $this->id,
+            'translations' => $translations
+        ];
     }
 
     public function searchTable()

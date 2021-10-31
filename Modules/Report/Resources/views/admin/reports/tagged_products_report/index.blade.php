@@ -6,6 +6,10 @@
 
         <input type="text" name="tag" class="form-control" id="tag" value="{{ $request->tag }}">
     </div>
+
+    <a href="{{ route('admin.reports.download', ['type' => 'tagged_products_report']) }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')

@@ -5,6 +5,10 @@
         <label for="keyword">{{ trans('report::admin.filters.keyword') }}</label>
         <input type="text" name="keyword" class="form-control" id="keyword" value="{{ $request->keyword }}">
     </div>
+
+    <a href="{{ route('admin.reports.download', ['type' => 'search_report']) }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')

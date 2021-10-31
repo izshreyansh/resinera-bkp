@@ -16,7 +16,19 @@ use Modules\Report\TaggedProductsReport;
 use Modules\Report\BrandedProductsReport;
 use Modules\Report\ProductsPurchaseReport;
 use Modules\Report\CategorizedProductsReport;
+use FleetCart\Exports\CouponsReport as CouponsReportExport;
 use FleetCart\Exports\CustomersOrderReport as CustomersOrderReportExport;
+use FleetCart\Exports\ProductsPurchaseReport as ProductsPurchaseReportExport;
+use FleetCart\Exports\ProductsStockReport as ProductsStockReportExport;
+use FleetCart\Exports\ProductsViewReport as ProductsViewReportExport;
+use FleetCart\Exports\BrandedProductsReport as BrandedProductsReportExport;
+use FleetCart\Exports\CategorizedProductsReport as CategorizedProductsReportExport;
+use FleetCart\Exports\TaxedProductsReport as TaxedProductsReportExport;
+use FleetCart\Exports\TaggedProductsReport as TaggedProductsReportExport;
+use FleetCart\Exports\SalesReport as SalesReportExport;
+use FleetCart\Exports\SearchReport as SearchReportExport;
+use FleetCart\Exports\ShippingReport as ShippingReportExport;
+use FleetCart\Exports\TaxReport as TaxReportExport;
 
 class ReportController
 {
@@ -39,6 +51,27 @@ class ReportController
         'search_report' => SearchReport::class,
         'shipping_report' => ShippingReport::class,
         'tax_report' => TaxReport::class,
+    ];
+
+    /**
+     * Array of available reports.
+     *
+     * @var array
+     */
+    private $reportExports = [
+        'coupons_report' => CouponsReportExport::class,
+        'customers_order_report' => CustomersOrderReportExport::class,
+        'products_purchase_report' => ProductsPurchaseReportExport::class,
+        'products_stock_report' => ProductsStockReportExport::class,
+        'products_view_report' => ProductsViewReportExport::class,
+        'branded_products_report' => BrandedProductsReportExport::class,
+        'categorized_products_report' => CategorizedProductsReportExport::class,
+        'taxed_products_report' => TaxedProductsReportExport::class,
+        'tagged_products_report' => TaggedProductsReportExport::class,
+        'sales_report' => SalesReportExport::class,
+        'search_report' => SearchReportExport::class,
+        'shipping_report' => ShippingReportExport::class,
+        'tax_report' => TaxReportExport::class,
     ];
 
     /**
@@ -66,9 +99,9 @@ class ReportController
      */
     public function download(Request $request)
     {
-        //$type = $request->query('type');
+        $type = $request->query('type');
 
-        return (new CustomersOrderReportExport)->download('cu_orders.csv');
+        return (new $this->reportExports[$type])->download('report.csv');
     }
 
     /**

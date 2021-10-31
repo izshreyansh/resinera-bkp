@@ -5,6 +5,10 @@
     @include('report::admin.reports.filters.to')
     @include('report::admin.reports.filters.status')
     @include('report::admin.reports.filters.group')
+
+    <a href="{{ route('admin.reports.download', ['type' => 'sales_report']) }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')

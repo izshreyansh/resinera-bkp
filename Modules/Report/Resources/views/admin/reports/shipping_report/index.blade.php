@@ -19,6 +19,10 @@
             @endforeach
         </select>
     </div>
+
+    <a href="{{ route('admin.reports.download', ['type' => 'shipping_report']) }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')

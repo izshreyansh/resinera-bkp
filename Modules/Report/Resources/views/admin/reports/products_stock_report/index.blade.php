@@ -26,6 +26,10 @@
             </option>
         </select>
     </div>
+
+    <a href="{{ route('admin.reports.download', ['type' => 'products_stock_report']) }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')

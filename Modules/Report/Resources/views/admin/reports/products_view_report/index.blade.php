@@ -10,6 +10,10 @@
         <label for="sku">{{ trans('report::admin.filters.sku') }}</label>
         <input type="text" name="sku" class="form-control" id="sku" value="{{ $request->sku }}">
     </div>
+
+    <a href="{{ route('admin.reports.download', ['type' => 'products_view_report']) }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')

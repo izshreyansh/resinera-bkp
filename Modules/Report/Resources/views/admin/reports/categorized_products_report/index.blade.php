@@ -6,6 +6,10 @@
 
         <input type="text" name="category" class="form-control" id="category" value="{{ $request->category }}">
     </div>
+
+    <a href="{{ route('admin.reports.download', ['type' => 'categorized_products_report']) }}" class="btn btn-primary">
+        <i class="fa fa-download"></i> Download
+    </a>
 @endsection
 
 @section('report_result')
