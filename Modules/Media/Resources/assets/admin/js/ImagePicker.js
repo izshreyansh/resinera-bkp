@@ -60,7 +60,7 @@ export default class {
 
             if (imageHolderWrapper.find('.image-holder').length === 1) {
                 imageHolderWrapper.html(
-                    this.getImagePlaceholder(e.currentTarget.dataset.inputName)
+                    this.getImagePlaceholder(e.currentTarget.dataset.inputName),
                 );
             }
 

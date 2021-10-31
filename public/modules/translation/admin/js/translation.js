@@ -128,7 +128,7 @@ eval("/*! X-editable - v1.5.1 \n* In-place editing with Twitter Bootstrap, jQuer
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\github-developer3-jogiinfotech\resinera\Modules\Translation\Resources\assets\admin\js\main.js */"./Modules/Translation/Resources/assets/admin/js/main.js");
+module.exports = __webpack_require__(/*! /Users/izshreyansh/sites/resinera/Modules/Translation/Resources/assets/admin/js/main.js */"./Modules/Translation/Resources/assets/admin/js/main.js");
 
 
 /***/ })

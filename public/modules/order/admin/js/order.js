@@ -104,7 +104,7 @@ eval("$('#order-status').change(function (e) {\n  $.ajax({\n    type: 'PUT',\n  
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\github-developer3-jogiinfotech\resinera\Modules\Order\Resources\assets\admin\js\main.js */"./Modules/Order/Resources/assets/admin/js/main.js");
+module.exports = __webpack_require__(/*! /Users/izshreyansh/sites/resinera/Modules/Order/Resources/assets/admin/js/main.js */"./Modules/Order/Resources/assets/admin/js/main.js");
 
 
 /***/ })

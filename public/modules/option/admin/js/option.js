@@ -141,7 +141,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Opt
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\github-developer3-jogiinfotech\resinera\Modules\Option\Resources\assets\admin\js\main.js */"./Modules/Option/Resources/assets/admin/js/main.js");
+module.exports = __webpack_require__(/*! /Users/izshreyansh/sites/resinera/Modules/Option/Resources/assets/admin/js/main.js */"./Modules/Option/Resources/assets/admin/js/main.js");
 
 
 /***/ })

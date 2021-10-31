@@ -104,7 +104,7 @@ eval("window.admin.removeSubmitButtonOffsetOn(['#logo', '#footer', '#newsletter'
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\github-developer3-jogiinfotech\resinera\Themes\Storefront\resources\assets\admin\js\main.js */"./Themes/Storefront/resources/assets/admin/js/main.js");
+module.exports = __webpack_require__(/*! /Users/izshreyansh/sites/resinera/Themes/Storefront/resources/assets/admin/js/main.js */"./Themes/Storefront/resources/assets/admin/js/main.js");
 
 
 /***/ })

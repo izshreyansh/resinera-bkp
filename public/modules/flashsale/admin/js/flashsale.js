@@ -129,7 +129,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Fla
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\github-developer3-jogiinfotech\resinera\Modules\FlashSale\Resources\assets\admin\js\main.js */"./Modules/FlashSale/Resources/assets/admin/js/main.js");
+module.exports = __webpack_require__(/*! /Users/izshreyansh/sites/resinera/Modules/FlashSale/Resources/assets/admin/js/main.js */"./Modules/FlashSale/Resources/assets/admin/js/main.js");
 
 
 /***/ })

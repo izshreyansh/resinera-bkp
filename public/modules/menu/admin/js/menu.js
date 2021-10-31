@@ -116,7 +116,7 @@ eval("/*!\n * Nestable jQuery Plugin - Copyright (c) 2014 Ramon Smit - https://g
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\github-developer3-jogiinfotech\resinera\Modules\Menu\Resources\assets\admin\js\main.js */"./Modules/Menu/Resources/assets/admin/js/main.js");
+module.exports = __webpack_require__(/*! /Users/izshreyansh/sites/resinera/Modules/Menu/Resources/assets/admin/js/main.js */"./Modules/Menu/Resources/assets/admin/js/main.js");
 
 
 /***/ })

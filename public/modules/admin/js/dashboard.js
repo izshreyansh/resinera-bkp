@@ -2181,7 +2181,7 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\github-developer3-jogiinfotech\resinera\Modules\Admin\Resources\assets\js\dashboard.js */"./Modules/Admin/Resources/assets/js/dashboard.js");
+module.exports = __webpack_require__(/*! /Users/izshreyansh/sites/resinera/Modules/Admin/Resources/assets/js/dashboard.js */"./Modules/Admin/Resources/assets/js/dashboard.js");
 
 
 /***/ })
