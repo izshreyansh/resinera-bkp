@@ -35,12 +35,14 @@ class Paytm implements GatewayInterface
 
         $params['head'] = ['signature' => $checksum];
 
+		logger($params);
+		
         $ch = curl_init($this->getEndpoint($order));
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params, JSON_UNESCAPED_SLASHES));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-
+		
         $response = json_decode(curl_exec($ch))->body;
 
         if ($response->resultInfo->resultStatus === 'F') {
@@ -55,7 +57,7 @@ class Paytm implements GatewayInterface
         return [
             'requestType' => 'Payment',
             'mid' => setting('paytm_merchant_id'),
-            'websiteName' => 'WEBSTAGING',
+            'websiteName' => 'DEFAULT',
             'orderId' => $order->id,
             'txnAmount' => [
                 'value' => $order->total->convertToCurrentCurrency()->round()->amount(),
